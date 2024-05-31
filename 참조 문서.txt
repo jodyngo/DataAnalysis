@@ -1,0 +1,40 @@
+python version : 3.9.11
+used library : matplotlib, keras, numpy, scipy, scikit-learn, pandas
+data source : 대청댐 PHD 데이터, 프로젝트 폴더 내 CSV형태로 존재
+
+#실험계획
+    # 데이터추출
+	# 추출방법 : pre-processing의 fetchValues함수를 이용하여 PHD와 통신 후 CSV로 저장
+    # 분석모델 선정
+   	# 태그1개에 대한 시계열 데이터를 4개의 분석모델로 훈련하여 설명력 확인
+    	# 확인한 모델 : 단순선형회귀, 결정트리, LSTM, DNN
+    	# 선정이유 : 비선형적 데이터에도 강한 설명력을 보이면서, 무변동 패턴을 탐지할 수 있는 모델
+
+#전처리 -> DI, 알람발생 등 불필요태그삭제
+    #정규화 - > MinMaxScaler.fir_Transform 함수로 0과 1사이의 값으로 바꿔서 모델 훈련
+
+#후처리
+    # 역정규화 -> MinMaxScaler.InverseTransform 함수로 정규화된 데이터를 그래프에 표시할 수 있게 변형
+    # 태그2개에 대한 산점도 표시
+    # 훈련된 회귀모델 표시
+    # 이상치 표시
+    # 무변동 표시
+
+#Experiment plan
+    # Data extract
+# Extraction method: Use the fetchValues ​​function of pre-processing to communicate with PHD and save as CSV
+    # Selection of analysis model
+   # Check explanatory power by training time series data for one tag with four analysis models
+    # Confirmed models: simple linear regression, decision tree, LSTM, DNN
+    # Reason for selection: A model that shows strong explanatory power even in non-linear data and can detect non-fluctuating patterns
+
+#Preprocessing -> Delete unnecessary tags such as DI, alarm occurrence, etc.
+    #Normalization -> Train the model by changing it to a value between 0 and 1 with the MinMaxScaler.fir_Transform function.
+
+#After treatment
+    # Inverse normalization -> Transform normalized data so that it can be displayed on the graph with the MinMaxScaler.InverseTransform function
+    # Display a scatterplot for 2 tags
+    # Display the trained regression model
+    # Display outliers
+    # Show no change
+
